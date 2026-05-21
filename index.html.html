@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yard Meadow | Regenerating Soil, Water, and Habitat</title>
+  <meta name="description" content="Yard Meadow explains why a yard can be managed for soil health, native plants, pollinators, water retention, and drought resilience instead of short turf grass." />
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --text: #243022;
+      --muted: #5d6657;
+      --green: #4f7d3a;
+      --green-dark: #2f5124;
+      --gold: #c89b3c;
+      --cream: #fffaf0;
+      --card: #ffffff;
+      --border: #ddd2bd;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--green-dark); }
+
+    header {
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 5rem 1.25rem 4rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      color: var(--green-dark);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.95;
+      margin: 0.5rem 0 1.25rem;
+      letter-spacing: -0.06em;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 670px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.85rem 1.1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 2px solid var(--green-dark);
+    }
+
+    .button.primary {
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--green-dark);
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #efe4ca);
+      border: 1px solid var(--border);
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(58, 49, 32, 0.14);
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .stat {
+      border-top: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--green-dark);
+    }
+
+    section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 4rem 1.25rem;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      margin: 0 0 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1.3rem;
+      padding: 1.4rem;
+    }
+
+    .card h3 { margin-top: 0; }
+
+    .highlight {
+      background: var(--green-dark);
+      color: white;
+      border-radius: 2rem;
+      padding: 3rem;
+    }
+
+    .highlight p { color: #e6eddc; }
+
+    .video-placeholder {
+      background: #1f271d;
+      color: white;
+      min-height: 220px;
+      border-radius: 1.5rem;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .faq details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    footer {
+      background: #20281e;
+      color: white;
+      padding: 3rem 1.25rem;
+      margin-top: 3rem;
+    }
+
+    footer .inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    footer a { color: #d7e7c9; }
+
+    @media (max-width: 820px) {
+      header { align-items: flex-start; }
+      nav { display: none; }
+      .hero { grid-template-columns: 1fr; padding-top: 3rem; }
+      .grid { grid-template-columns: 1fr; }
+      .highlight { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Yard Meadow</div>
+    <nav>
+      <a href="#why">Why</a>
+      <a href="#videos">Videos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#resources">Resources</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Soil • Water • Pollinators • Drought resilience</div>
+        <h1>This yard is not neglected. It is being regenerated.</h1>
+        <p>Yard Meadow is a local experiment in replacing high-maintenance turf with a living system that builds soil, holds moisture, supports pollinators, and prepares for hotter, drier summers.</p>
+        <div class="buttons">
+          <a class="button primary" href="#why">Why this yard looks different</a>
+          <a class="button secondary" href="#videos">Watch the videos</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h2>The basic idea</h2>
+        <div class="stat"><strong>Less mowing</strong> Lower fuel use, less noise, more habitat.</div>
+        <div class="stat"><strong>More roots</strong> Deeper roots improve soil structure and water retention.</div>
+        <div class="stat"><strong>More life</strong> Flowers, clover, native plants, insects, birds, and healthier soil.</div>
+      </aside>
+    </section>
+
+    <section id="why">
+      <div class="section-title">
+        <h2>Why convert a lawn into a meadow?</h2>
+        <p>Traditional turf grass is often shallow-rooted, water-hungry, chemically dependent, and biologically thin. A regenerative yard is managed differently: not for a short, uniform carpet, but for soil function and ecological benefit.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Build soil</h3>
+          <p>More plant diversity means more root diversity. Roots feed soil organisms, help create structure, and improve the ground’s ability to absorb and hold water.</p>
+        </article>
+        <article class="card">
+          <h3>Hold moisture</h3>
+          <p>Covered soil dries out more slowly than exposed, scalped lawn. Taller vegetation can shade the soil surface and reduce evaporation during heat.</p>
+        </article>
+        <article class="card">
+          <h3>Support pollinators</h3>
+          <p>Flowering plants provide nectar, pollen, shelter, and seasonal habitat for bees, butterflies, beneficial insects, and birds.</p>
+        </article>
+        <article class="card">
+          <h3>Reduce inputs</h3>
+          <p>The goal is fewer chemicals, less irrigation, less mowing, and less dependence on fragile lawn-maintenance routines.</p>
+        </article>
+        <article class="card">
+          <h3>Prepare for drought</h3>
+          <p>Climate stress is not theoretical. A yard that retains water and protects soil is more resilient than a short-cut monoculture lawn.</p>
+        </article>
+        <article class="card">
+          <h3>Teach by example</h3>
+          <p>This site exists because people walking by may wonder what is happening here. The answer: deliberate restoration, not abandonment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="highlight">
+        <h2>This is a working yard, not a finished product.</h2>
+        <p>The process may look messy at times. Regeneration is seasonal. Some areas will be experimental. Some plantings will fail. Some will thrive. The goal is not perfection; the goal is a healthier system over time.</p>
+      </div>
+    </section>
+
+    <section id="videos">
+      <div class="section-title">
+        <h2>Videos from the yard</h2>
+        <p>Short videos will document what is being planted, what is changing, what works, and what does not.</p>
+      </div>
+
+      <div class="grid">
+        <div class="video-placeholder">Video Placeholder<br />Why I stopped mowing</div>
+        <div class="video-placeholder">Video Placeholder<br />How clover helps soil</div>
+        <div class="video-placeholder">Video Placeholder<br />What drought-resilient yards need</div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="section-title">
+        <h2>Neighborhood FAQ</h2>
+      </div>
+
+      <details open>
+        <summary>Is this just an unmowed lawn?</summary>
+        <p>No. The purpose is to transition away from short turf toward a managed, regenerative yard with better soil, more plant diversity, and more habitat value.</p>
+      </details>
+
+      <details>
+        <summary>Will this attract pests?</summary>
+        <p>A healthier yard can attract more insects, but that includes beneficial insects and pollinators. The goal is biological balance, not a neglected pest habitat.</p>
+      </details>
+
+      <details>
+        <summary>Will it look messy?</summary>
+        <p>Sometimes, yes. Especially during transition. A meadow-style yard is not the same aesthetic as a manicured lawn. Edges, paths, signs, and intentional plantings help make the purpose clear.</p>
+      </details>
+
+      <details>
+        <summary>Can I do this in my own yard?</summary>
+        <p>Yes, but the best approach depends on your soil, sun exposure, water access, local rules, and whether you want a subtle transition or a full meadow conversion.</p>
+      </details>
+    </section>
+
+    <section id="resources">
+      <div class="section-title">
+        <h2>Resources</h2>
+        <p>Coming soon: native plant lists, soil-building notes, local nursery links, reading recommendations, and practical steps for converting part of a lawn.</p>
+      </div>
+      <div class="card">
+        <h3>Follow the project</h3>
+        <p>Add links here for YouTube, TikTok, Instagram, Facebook Reels, or any other video/social platform you decide to use.</p>
+        <p><a href="https://youtube.com">YouTube</a> • <a href="https://instagram.com">Instagram</a> • <a href="https://tiktok.com">TikTok</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <h2>Yard Meadow</h2>
+      <p>A small yard-scale experiment in soil restoration, water retention, pollinator support, and climate resilience.</p>
+      <p>Website: <a href="https://yardmeadow.org">yardmeadow.org</a></p>
+    </div>
+  </footer>
+</body>
+</html>
